@@ -1,0 +1,117 @@
+$primaryClr: #3D9090;
+$secondaryClr: #0f6666;
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    &__container{
+        margin: 0px auto;
+        max-width: 1600px;
+        padding: 0px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 83px;
+    }
+    &__logo{
+        z-index: 10;
+    }
+}
+
+.nav{
+    &__body{
+        @media (max-width: 767.98px) {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            padding: 70px 0px;
+            right: -100%;
+            top: 0;
+            background: #bddbdb;
+            transition: .5s right ease;
+        }
+        &.active{
+            right: 0;
+        }
+
+    }
+    &__icon{
+        display: none;
+        @media (max-width: 767.98px) {
+            z-index: 10;
+            display: block;
+            position: relative;
+            width: 40px;
+            height: 25px;
+            cursor: pointer;
+            & span,
+            &::before,
+            &::after{
+                left: 0;
+                position: absolute;
+                width: 100%;
+                height: 15%;
+                transition: all .3s ease;
+                background-color: $secondaryClr;
+            }
+            &::before,
+            &::after{
+                content: '';
+            }
+            &::before{
+                top: 0;
+            }
+            &::after{
+                bottom: 0;
+            }
+            & span{
+                top: 50%;
+                transform: scale(1) translate(0px, -50%);
+            }
+            &.active span{
+                transform: scale(0) translate(0px, -50%);
+            }
+            &.active::before{
+                top: 50%;
+                transform: rotate(-45deg) translate(0px,-50%);
+            }
+            &.active::after{
+                bottom: 50%;
+                transform: rotate(45deg) translate(0px,50%);
+            }
+        }
+    }
+    &__list{
+        display: flex;
+        @media (max-width: 767.98px){
+            flex-direction: column;
+        }
+    }
+    &__item{
+        line-height: 133.84%;
+        letter-spacing: 0.055em;
+        @include adaptiv-font(21, 17); 
+            &:not(:last-child){
+                margin: 0px 45px 0px 0px;
+            }
+        @media (max-width: 767.98px){
+            text-align: center;
+            line-height: 160%;
+            &:not(:last-child){
+                margin: 0px;
+            }
+        }
+    }
+    &__link{
+        color: $primaryClr;
+        transition: .3s ease all;
+        &:hover{
+            color: $secondaryClr;
+        }
+    }
+}
