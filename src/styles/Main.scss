@@ -62,13 +62,25 @@
     border-radius: 20px;
     margin: 40px 0px 0px 0px;
     background: #BDDDDD;
-    padding: 0px 65px;
+    padding: 0px 15px;
     &__list{
         display: flex;
         flex-direction: column;
     }
     &__item{
         margin: 15px 0px 0px 0px;
+        padding: 0px 50px;
+        transition: .5s ease all;
+        &:hover{
+            background: #FFFFFF;
+            opacity: 0.5;
+            border-radius: 14px;
+        }
+        &:active{
+            background: #FFFFFF;
+            opacity: 0.7;
+            border-radius: 14px;
+        }
     }
 }
 

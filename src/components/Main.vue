@@ -7,7 +7,10 @@
             </div>
             <div class="main__img">
                 <MainImg class="mainImage"/>
-                <Lamp1 class="changeInImg"/>
+                <Lamp1
+                    class="changeInImg"
+                    :class="{changeImg : changeImgActive}"
+                />
             </div>
         </div>
     </main>
@@ -20,11 +23,11 @@
     import MainText from './MainText.vue';
     export default {
         components:{
-    MainText,
-    MainImg,
-    MainProperty,
-    Lamp1
-}
+            MainText,
+            MainImg,
+            MainProperty,
+            Lamp1
+        }   
     }
 </script>
 

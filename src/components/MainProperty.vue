@@ -6,21 +6,21 @@
                 <li 
                     class="nav-property__item"
                 >
-                    <router-link to="/one">
+                    <router-link to="/lamp1">
                         <Lamp1 class="smallLamp"/>
                     </router-link>
                 </li>
                 <li 
                     class="nav-property__item"
                 >
-                    <router-link to="/two">
+                    <router-link to="/lamp2">
                         <Lamp2 class="smallLamp"/>
                     </router-link>
                 </li>
                 <li 
                     class="nav-property__item"
                 >
-                    <router-link to="/three">
+                    <router-link to="/lamp3">
                         <Lamp3 class="smallLamp"/>
                     </router-link>
                 </li>
@@ -56,6 +56,9 @@ import MainProperty1 from '../pages/MainProperty1.vue';
 </script>
 
 <style>
+    .nav-property__item{
+        
+    }
     .smallLamp{
         width: 34px;
         height: 125px;
