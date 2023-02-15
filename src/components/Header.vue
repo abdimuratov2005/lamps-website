@@ -32,6 +32,6 @@
                 window.scrollY >= 30 ? this.scrollToYTo = true : this.scrollToYTo = false
             }
         },
-        name: 'Header',
+        name: 'my-header',
     }
 </script>

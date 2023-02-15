@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: 'night',
+        name: 'my-night',
         data(){
             return{
                 night: './img/night.svg'

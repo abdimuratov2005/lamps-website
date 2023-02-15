@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: 'sun',
+        name: 'my-sun',
         data(){
             return{
                 sun: './img/sun.svg'

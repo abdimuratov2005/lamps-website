@@ -9,6 +9,23 @@
     text-decoration: none;   
     user-select: none;
 }
+/*=============================================================================*/
+
 @import 'mixins';
 @import 'Header';
 @import 'Main';
+
+
+/*=============================================================================*/
+.image1,.image2,.image3{
+    display: none;
+    &.active{
+        display: block;
+    }
+}
+.sunny, .dark{
+    display: none;
+    &.active{
+        display: block;
+    }
+}

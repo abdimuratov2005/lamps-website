@@ -1,29 +1,25 @@
 <template>
     <div id="main__property" class="main__property property">
 
-        <router-view v-slot="{ Component }">
-            <transition name="fade">
-                <component :is="Component"></component>
-            </transition>
-        </router-view>
+        <router-view />
 
         <nav class="property__nav nav-property">
 
             <ul class="nav-property__list">
 
-                <router-link to="/lamp1">
+                <router-link to="/lamp1" @click="changeImgActive1">
                     <li class="nav-property__item">
                         <lamp-1 class="smallLamp"/>
                     </li>
                 </router-link>
 
-                <router-link to="/lamp2">
+                <router-link to="/lamp2" @click="changeImgActive2">
                     <li class="nav-property__item">
                         <lamp-2 class="smallLamp"/>
                     </li>
                 </router-link>
 
-                <router-link to="/lamp3">
+                <router-link to="/lamp3" @click="changeImgActive3">
                     <li class="nav-property__item">
                         <lamp-3 class="smallLamp"/>
                     </li>
@@ -33,19 +29,16 @@
 
             <div class="day-night">
 
-                <router-link to="">
-                    <li class="sun">
-                        <sun />
-                    </li>
-                </router-link>
+                <li class="sun" @click="sun">
+                    <my-sun />
+                </li>
 
-                <router-link to="">
-                    <li class="night">
-                        <night />
-                    </li>
-                </router-link>
+                <li class="night" @click="night">
+                    <my-night />
+                </li>
 
             </div>
+            
         </nav>
     </div>
     
@@ -54,21 +47,29 @@
 <script>
     export default {
         name: "main-property",
+        methods: {
+            changeImgActive1(){
+                this.$emit('changeImgActive1')
+            },
+            changeImgActive2(){
+                this.$emit('changeImgActive2')
+            },
+            changeImgActive3(){
+                this.$emit('changeImgActive3')
+            },
+            sun(){
+                this.$emit('sun')
+            },
+            night(){
+                this.$emit('night')
+            }
+        }
     }
 </script>
 
-<style>
+<style scoped>
     .smallLamp{
         width: 34px;
         height: 125px;
     }
-    .page-opacity-enter-active,
-    .page-opacity-leave-active{
-        transition: .6s ease all;
-    }
-    .page-opacity-enter-from,
-    .page-opacity-leave-to{
-        opacity: 0;
-    }
-    
 </style>

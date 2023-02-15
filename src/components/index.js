@@ -11,6 +11,7 @@ import Lamp1 from './Lamp1.vue';
     import Header from './Header.vue';
     import Main from './Main.vue';
     import Logo from './Logo.vue';
+    import MainImgNight from './MainImgNight.vue'
 
 export default [
     Lamp1,
@@ -26,4 +27,5 @@ export default [
     Navbar,
     Main,
     Logo,
+    MainImgNight,
 ]
