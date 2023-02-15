@@ -25,22 +25,19 @@
         </div>
     </div>
     <div class="property__img">
-        <Lamp2 />
+        <lamp-3 />
     </div>
 </template>
 
 <script>
-import Lamp2 from '../components/Lamp2.vue';
-
     export default {
     data() {
         return {
             lamps: [
-                { id: 2, material: "Random", dimensions: "H 30 x W 20 x D 15", weight: "2,2 kg", electrification: "LED 10W | G9 |  220-240V | 50 Hz" },
+                { id: 3, material: "Metal", dimensions: "H 45 x W 12 x D 12", weight: "2,4 kg", electrification: "LED 10W | G9 |  220-240V | 50 Hz" },
             ]
         };
     },
-    components: { Lamp2 }
 }
 </script>
 

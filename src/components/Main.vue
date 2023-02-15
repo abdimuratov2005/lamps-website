@@ -2,12 +2,12 @@
     <main id="main" class="main">
         <div class="main__container">
             <div class="main__content">
-                <MainText />
-                <MainProperty />
+                <main-text />
+                <main-property />
             </div>
             <div class="main__img">
-                <MainImg class="mainImage"/>
-                <Lamp1
+                <main-img class="mainImage" />
+                <lamp-1
                     class="changeInImg"
                     :class="{changeImg : changeImgActive}"
                 />
@@ -17,17 +17,8 @@
 </template>
 
 <script>
-    import MainProperty from '../components/MainProperty.vue';
-    import Lamp1 from './Lamp1.vue';
-    import MainImg from './MainImg.vue';
-    import MainText from './MainText.vue';
     export default {
-        components:{
-            MainText,
-            MainImg,
-            MainProperty,
-            Lamp1
-        }   
+        name: 'Main',
     }
 </script>
 

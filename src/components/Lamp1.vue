@@ -4,9 +4,10 @@
 
 <script>
     export default {
+        name: 'lamp-1',
         data(){
             return{
-                lamp1: './public/img/lamp1.png'
+                lamp1: './img/lamp1.png'
             }
         }
     }

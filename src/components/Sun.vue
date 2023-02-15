@@ -4,9 +4,10 @@
 
 <script>
     export default {
+        name: 'sun',
         data(){
             return{
-                sun: './public/img/sun.svg'
+                sun: './img/sun.svg'
             }
         }
     }

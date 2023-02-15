@@ -8,9 +8,10 @@
 
 <script>
     export default {
+        name: 'logo',
         data(){
             return{
-                logo: './public/img/ease.svg'
+                logo: './img/ease.svg'
             }
         }
     }

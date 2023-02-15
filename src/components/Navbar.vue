@@ -4,7 +4,6 @@
         @click="menuBar =! menuBar"
         :class="{active: menuBar}"
     >
-        
         <span></span>
     </div>
     <nav
@@ -27,6 +26,7 @@
 
 <script>
     export default {
+        name: 'navbar',
         data(){
             return{
                 menuBar: false,

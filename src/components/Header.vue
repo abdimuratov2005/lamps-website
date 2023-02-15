@@ -2,34 +2,36 @@
     <div 
         id="header" 
         class="header"
-        :class="{scrollActive : scrollToY}"
+        :class="{ active : scrollToYTo }"
     >
         <div class="header__container">
             <div class="header__logo">
                 <a href="#">
-                    <Logo />
+                    <logo />
                 </a>
             </div>
             <div class="header__navbar nav">
-                <Navbar/>
+                <navbar />
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import Logo from './Logo.vue';
-    import Navbar from './Navbar.vue';
-
     export default {
         data(){
-            return{
-                scrollToY: document.body.scrollY > 0
+            return {
+                scrollToYTo: false
             }
         },
-        components: {
-            Logo,
-            Navbar
+        created() {
+            window.addEventListener('scroll', this.scrollToY);
         },
+        methods: {
+            scrollToY(){
+                window.scrollY >= 30 ? this.scrollToYTo = true : this.scrollToYTo = false
+            }
+        },
+        name: 'Header',
     }
 </script>

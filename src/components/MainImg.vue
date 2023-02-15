@@ -8,9 +8,10 @@
 
 <script>
     export default {
+        name: 'main-img',
         data(){
             return{
-                mainImg: './public/img/main.png'
+                mainImg: './img/main.png'
             }
         }
     }
