@@ -11,7 +11,7 @@
         name: 'main-img-night',
         data(){
             return{
-                mainImgNight: './img/main-night.png'
+                mainImgNight: './img/main-night.webp'
             }
         }
     }

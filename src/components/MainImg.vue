@@ -10,7 +10,7 @@
     export default {
         name: 'main-img',
         data: () => ({
-            mainImg: './img/main.png'
+            mainImg: './img/main.webp'
         })
     }
 </script>
