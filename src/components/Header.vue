@@ -6,9 +6,9 @@
     >
         <div class="header__container">
             <div class="header__logo">
-                <a href="#">
+                <router-link to="/">
                     <logo />
-                </a>
+                </router-link>
             </div>
             <div class="header__navbar nav">
                 <navbar />

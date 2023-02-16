@@ -52,41 +52,31 @@
 <script>
     export default {
         name: 'my-main',
-        data(){
-            return{
-                img1: true,
-                img2: false,
-                img3: false,
-                sun: true,
-                night: false
-            }
-        },
+        data: () => ({
+            img1: [true],
+            img2: false,
+            img3: false,
+            sun: true,
+            night: false,
+        }),
         methods: {
-            ImgActive1(){
-                this.img2 = false,
-                this.img3 = false,
-                this.img1 = true
+            ImgActive1(e){
+                this.img2 = false, this.img3 = false, this.img1 = true
             },
-            ImgActive2(){
-                this.img2 = true,
-                this.img3 = false,
-                this.img1 = false
+            ImgActive2(e){
+                this.img2 = true, this.img3 = false, this.img1 = false
             },
-            ImgActive3(){
-                this.img2 = false,
-                this.img3 = true,
-                this.img1 = false
+            ImgActive3(e){
+                this.img2 = false, this.img3 = true, this.img1 = false
             },
             sunny(){
-                this.sun = true,
-                this.night = false
+                this.sun = true, this.night = false
             }
             ,
             dark(){
-                this.sun = false,
-                this.night = true
-            }
-        }
+                this.sun = false, this.night = true
+            },
+        },
     }
 </script>
 
@@ -97,5 +87,32 @@
         position: absolute;
         left: 230px;
         top: -150px;
+        @media (max-width: 1400px){
+            left: 300px;
+            height: 400px;
+            width: 100px;
+        }
+        @media (max-width: 1023.98px){
+            left: 230px;
+        }
+        @media (max-width: 767.98px){
+            left: 150px;
+            top: -80px;
+            height: 250px;
+            width: 70px;
+        }
+        @media (max-width: 574.98px){
+            left: 100px;
+            top: -130px;
+        }
+        @media (max-width: 400px){
+            left: 70px;
+            width: 60px;
+            height: 230px;
+        }
+        @media (max-width: 350px){
+            width: 50px;
+            height: 200px;
+        }
     }
 </style>

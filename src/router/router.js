@@ -6,7 +6,7 @@ import MainProperty3 from '../views/MainProperty3.vue';
 
 const routes = [
     { 
-        path: '/lamp1', 
+        path: '/lamp1',
         component: MainProperty1, 
         alias: '/',
     },

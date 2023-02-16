@@ -5,21 +5,30 @@
 
         <nav class="property__nav nav-property">
 
-            <ul class="nav-property__list">
+            <ul class="nav-property__list" >
 
-                <router-link to="/lamp1" @click="changeImgActive1">
+                <router-link
+                    to="/lamp1"
+                    @click="changeImgActive1"
+                >
                     <li class="nav-property__item">
                         <lamp-1 class="smallLamp"/>
                     </li>
                 </router-link>
 
-                <router-link to="/lamp2" @click="changeImgActive2">
+                <router-link 
+                    to="/lamp2"
+                    @click="changeImgActive2"
+                >
                     <li class="nav-property__item">
                         <lamp-2 class="smallLamp"/>
                     </li>
                 </router-link>
 
-                <router-link to="/lamp3" @click="changeImgActive3">
+                <router-link 
+                    to="/lamp3" 
+                    @click="changeImgActive3"
+                >
                     <li class="nav-property__item">
                         <lamp-3 class="smallLamp"/>
                     </li>
@@ -62,14 +71,18 @@
             },
             night(){
                 this.$emit('night')
-            }
+            },
         }
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .smallLamp{
         width: 34px;
         height: 125px;
+        @media (max-width: 767.98px){
+            width: 25px;
+            height: 90px;
+        }
     }
 </style>
