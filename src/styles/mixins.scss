@@ -1,16 +1,11 @@
-/* Max WIdth  */
-$MaxWidth: 1600;
-/* Max WIdth  */
-
-/* Adaptive */
+$MaxWidth: 1440;
 @mixin adaptiv-font($pcSize, $mobileSize) {
     $addSize: $pcSize - $mobileSize;
     $addMobileSize: $addSize + $addSize * 0.7;
-    @media (max-width: 767.98px){
+    @media (max-width: 767.98px) {
         font-size: calc(#{$mobileSize + px} + #{$addMobileSize} * ((100vw - 320px) / #{$MaxWidth}));
     }
-    @media (min-width: 767.98px){
+    @media (min-width: 767.98px) {
         font-size: calc(#{$mobileSize + px} + #{$addSize} * (100vw / #{$MaxWidth}));
     }
 }
-/* Adaptive */

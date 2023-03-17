@@ -1,16 +1,10 @@
 <template>
-    <img :src="sun" alt="Sun">
+    <img :src="store.sunIcon" alt="Sun">
 </template>
 
-<script>
-    export default {
-        name: 'my-sun',
-        data(){
-            return{
-                sun: './img/sun.svg'
-            }
-        }
-    }
+<script setup>
+import { useGlobalStore } from '../stores';
+const store = useGlobalStore()
 </script>
 
 <style>

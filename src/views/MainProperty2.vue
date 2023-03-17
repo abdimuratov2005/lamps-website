@@ -1,7 +1,8 @@
 <template>
     <div
         class="property__info"
-        v-for="lamp in lamps"
+        v-for="lamp in store.lamps_2"
+        :key="lamp.id"
         >
         <div>
             <strong>Material: </strong>
@@ -29,17 +30,10 @@
     </div>
 </template>
 
-<script>
-
-    export default {
-    data() {
-        return {
-            lamps: [
-                { id: 2, material: "Random", dimensions: "H 30 x W 20 x D 15", weight: "2,2 kg", electrification: "LED 10W | G9 |  220-240V | 50 Hz" },
-            ]
-        };
-    },
-}
+<script setup>
+import { useGlobalStore } from '../stores';
+import Lamp2 from '../components/Lamp2.vue';
+const store = useGlobalStore()
 </script>
 
 <style>

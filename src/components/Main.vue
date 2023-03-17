@@ -3,45 +3,34 @@
         <div class="main__container">
             
             <div class="main__content">
-                <main-text />
-                <main-property
-                    @changeImgActive1="ImgActive1"
-                    @changeImgActive2="ImgActive2"
-                    @changeImgActive3="ImgActive3"
-                    @sun="sunny"
-                    @night="dark"
-                />
+                <div class="main__title">
+                    Collection of lighting is inspired by the geometric works of the great Suprematist artists Kissitzky and Kazimir Malevich.<br><br>Suprematism is a modernist movement in the art of the early twentieth century, focused on the basic geometric forms, such as circles, squares, lines and rectangles. The geometric structure of the lamps will always look like a small art objects in your house.
+                </div>
+                <main-property />
             </div>
             
             <div class="main__img">
                 <main-img class="sunny"
-                    :class="{active : sun}"
+                    v-if="store.sun"
                 />
                 <main-img-night class="dark"
-                    :class="{active : night}"
+                    v-if="store.night"
                 />
-                <div class="image1"
-                    :class="{active : img1}"
-                >
+                <div v-if="store.img1">
                     <lamp-1
-                        class="changeInImg"
+                        :class="$style.changeInImg"
                         style="top: -70px;"
                     />
                 </div>
-                <div class="image2"
-                    :class="{active : img2}"
-                    
-                >
+                <div v-if="store.img2">
                     <lamp-2
-                        class="changeInImg"
+                        :class="$style.changeInImg"
                         style="top: -30px;"
                     />
                 </div>
-                <div class="image3"
-                    :class="{active : img3}"
-                >
+                <div v-if="store.img3">
                     <lamp-3
-                        class="changeInImg"
+                        :class="$style.changeInImg"
                     />
                 </div>
             </div>
@@ -49,38 +38,20 @@
     </main>
 </template>
 
-<script>
-    export default {
-        name: 'my-main',
-        data: () => ({
-            img1: [true],
-            img2: false,
-            img3: false,
-            sun: true,
-            night: false,
-        }),
-        methods: {
-            ImgActive1(e){
-                this.img2 = false, this.img3 = false, this.img1 = true
-            },
-            ImgActive2(e){
-                this.img2 = true, this.img3 = false, this.img1 = false
-            },
-            ImgActive3(e){
-                this.img2 = false, this.img3 = true, this.img1 = false
-            },
-            sunny(){
-                this.sun = true, this.night = false
-            }
-            ,
-            dark(){
-                this.sun = false, this.night = true
-            },
-        },
-    }
+<script setup>
+import Lamp1 from './Lamp1.vue';
+import Lamp2 from './Lamp2.vue';
+import Lamp3 from './Lamp3.vue';
+import MainImgNight from './MainImgNight.vue'
+import MainImg from './MainImg.vue';
+import MainProperty from './MainProperty.vue';
+import { useGlobalStore } from '../stores';
+const store = useGlobalStore();
+
+
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
     .changeInImg{
         width: 98px;
         height: 360px;

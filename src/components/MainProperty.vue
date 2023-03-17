@@ -9,16 +9,16 @@
 
                 <router-link
                     to="/lamp1"
-                    @click="changeImgActive1"
+                    @click="store.changeImgActive1"
                 >
                     <li class="nav-property__item">
                         <lamp-1 class="smallLamp"/>
                     </li>
                 </router-link>
 
-                <router-link 
+                <router-link
                     to="/lamp2"
-                    @click="changeImgActive2"
+                    @click="store.changeImgActive2"
                 >
                     <li class="nav-property__item">
                         <lamp-2 class="smallLamp"/>
@@ -27,7 +27,7 @@
 
                 <router-link 
                     to="/lamp3" 
-                    @click="changeImgActive3"
+                    @click="store.changeImgActive3"
                 >
                     <li class="nav-property__item">
                         <lamp-3 class="smallLamp"/>
@@ -38,11 +38,11 @@
 
             <div class="day-night">
 
-                <li class="sun" @click="sun">
+                <li class="sun" @click="store.sunMode">
                     <my-sun />
                 </li>
 
-                <li class="night" @click="night">
+                <li class="night" @click="store.nightMode">
                     <my-night />
                 </li>
 
@@ -53,27 +53,14 @@
     
 </template>
 
-<script>
-    export default {
-        name: "main-property",
-        methods: {
-            changeImgActive1(){
-                this.$emit('changeImgActive1')
-            },
-            changeImgActive2(){
-                this.$emit('changeImgActive2')
-            },
-            changeImgActive3(){
-                this.$emit('changeImgActive3')
-            },
-            sun(){
-                this.$emit('sun')
-            },
-            night(){
-                this.$emit('night')
-            },
-        }
-    }
+<script setup>
+import Lamp1 from './Lamp1.vue';
+import Lamp2 from './Lamp2.vue';
+import Lamp3 from './Lamp3.vue';
+import MyNight from './Night.vue';
+import MySun from './Sun.vue';
+import { useGlobalStore } from '../stores';
+const store = useGlobalStore()
 </script>
 
 <style scoped lang="scss">

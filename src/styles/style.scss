@@ -1,33 +1,16 @@
+@import 'mixins';
+@import 'Header';
+@import 'Main';
+@import 'Property';
+@import 'font';
 *,
 *::after,
 *::before{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'SF Compact Display', sans-serif;
+    font-family: 'SF Compact Display';
     list-style: none;
     text-decoration: none;   
     user-select: none;
 }
-/*=============================================================================*/
-
-@import 'mixins';
-@import 'Header';
-@import 'Main';
-@import 'Property';
-
-
-/*=============================================================================*/
-.image1,.image2,.image3{
-    display: none;
-    &.active{
-        display: block;
-    }
-}
-.sunny, .dark{
-    display: none;
-    &.active{
-        display: block;
-    }
-}
-

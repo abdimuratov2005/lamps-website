@@ -1,16 +1,10 @@
 <template>
-    <img :src="lamp2" alt="Lamp" class="lamp2">
+    <img :src="store.lamp2" alt="Lamp" class="lamp2">
 </template>
 
-<script>
-    export default {
-        name: 'lamp-2',
-        data(){
-            return{
-                lamp2: './img/lamp2.png'
-            }
-        }
-    }
+<script setup>
+import { useGlobalStore } from '../stores';
+const store = useGlobalStore()
 </script>
 
 <style>

@@ -1,19 +1,19 @@
 <template>
     <div 
         class="nav__icon"
-        @click="menuBar =! menuBar"
-        :class="{active: menuBar}"
+        @click="store.activeMenu"
+        :class="{active: store.menuBar}"
     >
         <span></span>
     </div>
     <nav
         class="nav__body"
-        :class="{active: menuBar}"
+        :class="{active: store.menuBar}"
     >
         <ul class="nav__list">
             <li 
                 class="nav__item" 
-                v-for="navItem in navItems" 
+                v-for="navItem in store.navItems" 
                 :key="navItem.id"
             >
                 <a href="#" class="nav__link">
@@ -24,19 +24,7 @@
     </nav>
 </template>
 
-<script>
-    export default {
-        name: 'navbar',
-        data(){
-            return{
-                menuBar: false,
-                navItems: [
-                    {id: 1, value: 'COLLESCTIONS'},
-                    {id: 2, value: 'BLOG'},
-                    {id: 3, value: 'ABOUT'},
-                    {id: 4, value: 'CONTACTS'}
-                ]
-            }
-        }
-    }
+<script setup>
+import { useGlobalStore } from '../stores';
+const store = useGlobalStore()
 </script>

@@ -1,14 +1,13 @@
 <template>
   <div id="app" class="app">
-    <my-header />
+    <Header />
     <my-main />
   </div>
 </template>
 
-<script>
-
-  export default {
-  }
+<script setup>
+import Header from './components/Header.vue';
+import MyMain from './components/Main.vue';
 </script>
 
 <style>

@@ -1,20 +1,15 @@
 <template>
     <img 
-        :src="logo" 
+        :src="store.logo" 
         alt="Logo-Ease" 
         class="logo"
     >
 </template>
 
-<script>
-    export default {
-        name: 'logo',
-        data(){
-            return{
-                logo: './img/ease.svg'
-            }
-        }
-    }
+<script setup>
+import { useGlobalStore } from '../stores';
+const store = useGlobalStore();
+
 </script>
 
 <style scoped lang="scss">

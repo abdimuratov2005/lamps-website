@@ -2,7 +2,6 @@
     <div 
         id="header" 
         class="header"
-        :class="{ active : scrollToYTo }"
     >
         <div class="header__container">
             <div class="header__logo">
@@ -17,21 +16,9 @@
     </div>
 </template>
 
-<script>
-    export default {
-        data(){
-            return {
-                scrollToYTo: false
-            }
-        },
-        created() {
-            window.addEventListener('scroll', this.scrollToY);
-        },
-        methods: {
-            scrollToY(){
-                window.scrollY >= 30 ? this.scrollToYTo = true : this.scrollToYTo = false
-            }
-        },
-        name: 'my-header',
-    }
+<script setup>
+import Navbar from './Navbar.vue';
+import Logo from './Logo.vue';
+
+
 </script>

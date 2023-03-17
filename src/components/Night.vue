@@ -1,16 +1,10 @@
 <template>
-    <img :src="night" alt="Night">
+    <img :src="store.nightIcon" alt="Night">
 </template>
 
-<script>
-    export default {
-        name: 'my-night',
-        data(){
-            return{
-                night: './img/night.svg'
-            }
-        }
-    }
+<script setup>
+import { useGlobalStore } from '../stores';
+const store = useGlobalStore()
 </script>
 
 <style>

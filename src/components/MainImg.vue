@@ -1,18 +1,14 @@
 <template>
     <img 
-        :src="mainImg" 
+        :src="store.mainImg" 
         alt="Main-Img"
         class="mainImg"
     >
 </template>
 
-<script se>
-    export default {
-        name: 'main-img',
-        data: () => ({
-            mainImg: './img/main.webp'
-        })
-    }
+<script setup>
+import { useGlobalStore } from '../stores';
+const store = useGlobalStore()
 </script>
 
 <style scoped lang="scss">
